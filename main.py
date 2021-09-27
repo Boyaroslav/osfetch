@@ -59,5 +59,9 @@ for i in x:
 
 for j in range(2):print()
 time.watch()
-osname.watch()
+try:
+    osname.watch()
+except:
+    osname=thing('uname -r','OS')
+    osname.watch()
 processor.watch()
