@@ -28,7 +28,23 @@ asciis={
         ' |    `.       | `/ Zq',
         '_)      \.___.,|     .',
         '\____   )MMMMMP|   ./',
-        '     `--       `--/ ']
+        '     `--       `--/ '],
+    'Kali' : [
+        ' ~~____..',
+        '       ```0',
+        '  ``----==-0',
+        '       ;/--=00000',
+        '---------===00000000',
+        '              ;////000o',
+        '             ;///000ooooooo/_\ ',
+        '           ;///         \ ____/===',
+        '            ;///',
+        '               ;/////',
+        '                  /////',
+        '                      \***\  ',
+        '                     //   //',
+        '                      //    //',
+        '                        //   //']
 }
 
 class thing:
@@ -40,9 +56,12 @@ class thing:
         if self.name=='os':
             self.printage=list(self.printage.split())[-1]
             print(self.name,"=",self.printage)
-        else:
+        if self.name=='time':
+            self.printage=list(self.printage.split())[0]
+            print(self.name,"=",self.printage)
+        if self.name=='architecture':
             print(self.name,"=",self.printage[:-1])
-time=thing("uptime -s","time")
+time=thing("uptime","time")
 osname=thing('lsb_release -i','os')
 processor=thing('uname -m','architecture')
 
